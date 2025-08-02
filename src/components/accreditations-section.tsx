@@ -44,7 +44,7 @@ export function AccreditationsSection() {
 
   return (
     <section
-      className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden"
+      className="py-10bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden"
       id="accreditations-section"
     >
       {/* Background Pattern */}

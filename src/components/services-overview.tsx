@@ -183,7 +183,7 @@ export function ServicesOverview() {
 
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+    <section className="py-10 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden" id="services-overview">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
@@ -229,11 +229,7 @@ export function ServicesOverview() {
                   <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
 
                   {/* Service Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <div className={`px-3 py-1 rounded-full text-white text-sm font-medium ${service.color}`}>
-                      Professional Testing
-                    </div>
-                  </div>
+              
                 </div>
 
                 {/* Service Content */}

@@ -128,7 +128,7 @@ const projects = [
   }
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden" id="projects-section">
+    <section className="py-5 bg-white relative overflow-hidden " id="projects-section" >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
@@ -236,14 +236,6 @@ const projects = [
                     </div>
                   </div>
 
-                  {/* Learn More Button */}
-                  <Button
-                    variant="ghost"
-                    className="group-hover:bg-red-50 group-hover:text-red-600 transition-all duration-300 p-0 h-auto font-medium text-sm"
-                    asChild
-                  >
-                   
-                  </Button>
                 </CardContent>
               </Link>
             </Card>
