@@ -5,8 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, ExternalLink } from "lucide-react"
 
 export function ContactSection() {
@@ -131,7 +130,14 @@ export function ContactSection() {
             </div>
 
             {/* Google Maps */}
-            <Card className="border-0 shadow-lg animate-slideInUp">
+     
+
+            {/* Quick Stats (Removed from here as it's in Hero and Stats sections) */}
+          </div>
+
+          {/* Contact Form */}
+          <div>
+            <Card className="border-0 shadow-2xl animate-slideInUp" style={{ animationDelay: "0.3s" }}>
               <CardContent className="p-0">
                 <div className="relative">
                   <div className="bg-gradient-to-r from-red-600 to-blue-600 p-4 text-white">
@@ -168,143 +174,6 @@ export function ContactSection() {
                     ></iframe>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Quick Stats (Removed from here as it's in Hero and Stats sections) */}
-          </div>
-
-          {/* Contact Form */}
-          <div>
-            <Card className="border-0 shadow-2xl animate-slideInUp" style={{ animationDelay: "0.3s" }}>
-              <CardContent className="p-8">
-                {!isSubmitted ? (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-                          Full Name *
-                        </label>
-                        <Input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          className="w-full"
-                          placeholder="Enter your full name"
-                          aria-required="true"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                          Email Address *
-                        </label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          className="w-full"
-                          placeholder="Enter your email"
-                          aria-required="true"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-2">
-                          Company Name
-                        </label>
-                        <Input
-                          id="company"
-                          name="company"
-                          type="text"
-                          value={formData.company}
-                          onChange={handleInputChange}
-                          className="w-full"
-                          placeholder="Enter your company name"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="service" className="block text-sm font-medium text-slate-700 mb-2">
-                          Service Required *
-                        </label>
-                        <select
-                          id="service"
-                          name="service"
-                          required
-                          value={formData.service}
-                          onChange={handleInputChange}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
-                          aria-required="true"
-                        >
-                          <option value="">Select a service</option>
-                          {services.map((service, index) => (
-                            <option key={index} value={service}>
-                              {service}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                        Project Details *
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        required
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        rows={5}
-                        className="w-full"
-                        placeholder="Please describe your testing requirements, project timeline, and any specific standards or certifications needed..."
-                        aria-required="true"
-                      />
-                    </div>
-
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-red-600 hover:bg-red-700 text-white py-4 text-lg transform hover:scale-105 transition-all duration-300 disabled:transform-none"
-                    >
-                      {isSubmitting ? (
-                        <div className="flex items-center space-x-2">
-                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                          <span>Sending Message...</span>
-                        </div>
-                      ) : (
-                        <div className="flex items-center space-x-2">
-                          <Send className="h-5 w-5" />
-                          <span>Send Message</span>
-                        </div>
-                      )}
-                    </Button>
-                  </form>
-                ) : (
-                  <div className="text-center py-12 animate-fadeInUp">
-                    <div className="bg-green-100 rounded-full p-4 w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                      <CheckCircle className="h-10 w-10 text-green-600" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4">Message Sent Successfully!</h3>
-                    <p className="text-slate-600 mb-6">
-                      Thank you for contacting QTISCO. Our team will review your requirements and respond within 24
-                      hours.
-                    </p>
-                    <div className="bg-blue-50 rounded-lg p-4">
-                      <p className="text-blue-800 font-medium">
-                        For urgent requests, please call us directly at +965-22284450
-                      </p>
-                    </div>
-                  </div>
-                )}
               </CardContent>
             </Card>
           </div>

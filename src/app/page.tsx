@@ -3,11 +3,11 @@ import { HeroSection } from "@/components/hero-section"
 import { ServicesOverview } from "@/components/services-overview"
 import { AboutSection } from "@/components/about-section"
 import { StatsSection } from "@/components/stats-section"
-import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { AccreditationsSection } from "@/components/accreditations-section"
 import { ProjectsSection } from "@/components/projects-section"
+import { ResourcesSection } from "@/components/resources-section"
 
 export default function HomePage() {
   return (
@@ -15,11 +15,10 @@ export default function HomePage() {
       <Header />
       <HeroSection />
       <ServicesOverview />
-      <AboutSection />
-      <StatsSection />
-            <ProjectsSection />
+      <AboutSection />       
+      <ProjectsSection />
+           <ResourcesSection />
       <AccreditationsSection />
-      <TestimonialsSection />
       <ContactSection />
       <Footer />
     </main>

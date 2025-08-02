@@ -102,21 +102,7 @@ export function AccreditationsSection() {
         </div>
 
         {/* Trust Statement */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-red-600 rounded-2xl p-8 lg:p-12 text-white animate-slideInUp">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex items-center justify-center space-x-4 mb-6">
-                <Award className="h-16 w-16 text-white" />
-              </div>
-              <h3 className="text-3xl lg:text-4xl font-bold mb-4">Certified Excellence</h3>
-              <p className="text-xl opacity-90 leading-relaxed">
-                Our international certifications demonstrate our commitment to the highest standards of quality, safety,
-                and environmental responsibility in all testing and inspection services.
-              </p>
-            </div>
-          </div>
-        </div>
-
+ 
         {/* Certificate Modal */}
         <CertificateModal
           isOpen={!!selectedCertificate}

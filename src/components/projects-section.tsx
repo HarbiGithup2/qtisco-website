@@ -11,94 +11,111 @@ import Link from "next/link"
 export function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState("All")
 
-  const projectCategories = ["All", "Oil & Gas", "Construction", "Infrastructure", "Industrial"]
+ const projectCategories = ["All", "Oil & Gas", "Construction", "Infrastructure", "Industrial"]
 
-  const projects = [
-    {
-      title: "Oil & Gas Facilities Testing",
-      category: "Oil & Gas",
-      description: "Comprehensive testing and inspection services for refineries, petrochemical plants, and pipelines.",
-      image: "/placeholder.svg?height=300&width=500&text=Oil+Gas+Testing",
-      services: ["Metallurgical Testing", "Non-Destructive Testing", "Third Party Inspection"],
-      applications: [
-        "Pressure vessel inspection",
-        "Pipeline integrity testing",
-        "Welding quality assessment",
-        "Equipment certification",
-      ],
-      link: "/projects/oil-gas",
-    },
-    {
-      title: "Construction Material Testing",
-      category: "Construction",
-      description: "Quality control testing for concrete, aggregates, cement, asphalt, and reinforcement materials.",
-      image: "/placeholder.svg?height=300&width=500&text=Construction+Materials",
-      services: ["Construction Materials Testing", "Chemical Analysis"],
-      applications: [
-        "Concrete strength testing",
-        "Aggregate quality analysis",
-        "Cement compliance testing",
-        "Asphalt performance evaluation",
-      ],
-      link: "/projects/construction-materials",
-    },
-    {
-      title: "Geotechnical Investigation",
-      category: "Construction",
-      description: "Comprehensive soil and rock testing for foundation design and earthwork quality assurance.",
-      image: "/placeholder.svg?height=300&width=500&text=Soil+Testing",
-      services: ["Soil and Rock Testing", "Survey & Drafting"],
-      applications: [
-        "Foundation design support",
-        "Soil bearing capacity analysis",
-        "Compaction quality control",
-        "Environmental assessment",
-      ],
-      link: "/projects/geotechnical",
-    },
-    {
-      title: "Infrastructure Projects",
-      category: "Infrastructure",
-      description: "Testing and inspection services for roads, bridges, and major infrastructure developments.",
-      image: "/placeholder.svg?height=300&width=500&text=Infrastructure+Testing",
-      services: ["Construction Materials Testing", "Survey & Drafting", "Third Party Inspection"],
-      applications: [
-        "Road construction quality control",
-        "Bridge structural assessment",
-        "Pavement materials testing",
-        "Infrastructure surveying",
-      ],
-      link: "/projects/infrastructure",
-    },
-    {
-      title: "Industrial Facility Assessment",
-      category: "Industrial",
-      description: "Metallurgical testing and structural analysis for manufacturing and industrial facilities.",
-      image: "/placeholder.svg?height=300&width=500&text=Industrial+Testing",
-      services: ["Metallurgical Testing", "Non-Destructive Testing", "Chemical Analysis"],
-      applications: [
-        "Equipment material analysis",
-        "Structural integrity assessment",
-        "Quality certification",
-        "Safety compliance testing",
-      ],
-      link: "/projects/industrial",
-    },
-    {
-      title: "Environmental & Chemical Analysis",
-      category: "Industrial",
-      description: "Chemical analysis for construction materials and environmental compliance testing.",
-      image: "/placeholder.svg?height=300&width=500&text=Chemical+Analysis",
-      services: ["Chemical Analysis"],
-      applications: [
-        "Material composition analysis",
-        "Environmental compliance testing",
-        "Water quality assessment",
-        "Contamination analysis",
-      ],
-      link: "/projects/environmental-chemical",
-    },
-  ]
+const projects = [
+  {
+    title: "Oil & Gas Testing Services",
+    category: "Oil & Gas",
+    description: "Testing and inspection services for refineries, petrochemical plants, and pipelines.",
+    image: "/images/qtisco_image_5_2.jpeg", // يفضل أخذ صورة من PDF أو استبدالها لاحقًا
+    services: [
+      "Metallurgical Testing",
+      "Non-Destructive Testing",
+      "Third Party Inspection Services",
+    ],
+    applications: [
+      "Welded samples testing",
+      "Radiographic and ultrasonic inspection",
+      "Pipeline and equipment evaluation",
+    ],
+    link: "#",
+  },
+  {
+    title: "Civil Construction Material Testing",
+    category: "Construction",
+    description: "Testing of concrete, aggregates, cement, asphalt, and other construction materials.",
+    image: "/images/qtisco_image_6_2.jpeg",
+    services: [
+      "Civil Construction Material Testing",
+      "Chemical Analysis",
+    ],
+    applications: [
+      "Concrete strength and consistency",
+      "Aggregate grading and durability",
+      "Cement and admixture compliance",
+      "Asphalt mix verification",
+    ],
+    link: "#",
+  },
+  {
+    title: "Soil and Rock Investigation",
+    category: "Construction",
+    description: "Soil and rock testing services for civil projects and foundation design.",
+    image: "/images/qtisco_image_9_2.jpeg",
+    services: [
+      "Soil and Rock Testing",
+      "Survey & Engineering Drafting Services",
+    ],
+    applications: [
+      "Sub-soil investigation",
+      "CBR and compaction tests",
+      "Plate load and field density tests",
+      "Foundation soil classification",
+    ],
+    link: "#",
+  },
+  {
+    title: "Infrastructure Quality Assurance",
+    category: "Infrastructure",
+    description: "Inspection and testing for roads, bridges, and infrastructure works.",
+    image: "/images/qtisco_image_7_3.jpeg",
+    services: [
+      "Construction Material Testing",
+      "Survey & Engineering Drafting Services",
+      "Third Party Inspection Services",
+    ],
+    applications: [
+      "Pavement material testing",
+      "Structural inspection",
+      "Volumetric surveys",
+      "Site-level compliance checks",
+    ],
+    link: "#",
+  },
+  {
+    title: "Industrial & Manufacturing Testing",
+    category: "Industrial",
+    description: "Metallurgical and NDT services for manufacturing and industrial facilities.",
+    image: "/images/qtisco_image_4_3.jpeg",
+    services: [
+      "Metallurgical Testing",
+      "Non-Destructive Testing",
+      "Chemical Analysis",
+    ],
+    applications: [
+      "Material strength and hardness",
+      "Weld and surface flaw detection",
+      "Chemical composition testing",
+    ],
+    link: "#",
+  },
+  {
+    title: "Environmental & Material Chemical Testing",
+    category: "Industrial",
+    description: "Chemical analysis for construction materials and environmental research.",
+    image: "/images/qtisco_image_1_2.jpeg",
+    services: ["Chemical Analysis"],
+    applications: [
+      "Soil and water chemical testing",
+      "Admixtures and cement analysis",
+      "Silica and bitumen verification",
+      "Paints, gypsum, and membrane evaluation",
+    ],
+    link: "#",
+  },
+]
+
 
   const filteredProjects =
     activeFilter === "All" ? projects : projects.filter((project) => project.category === activeFilter)
@@ -234,32 +251,7 @@ export function ProjectsSection() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-red-600 rounded-2xl p-8 lg:p-12 text-white animate-slideInUp">
-            <h3 className="text-3xl font-bold mb-4">Ready to Start Your Next Project?</h3>
-            <p className="text-xl mb-8 opacity-90">
-              Join our growing list of satisfied clients across Kuwait's major industries. Let us deliver excellence for
-              your next testing and inspection project.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 transform hover:scale-105 transition-all duration-300"
-                onClick={scrollToContact}
-              >
-                Start Your Project
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 transform hover:scale-105 transition-all duration-300 bg-transparent"
-                asChild
-              >
-                <Link href="/projects">View All Projects</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   )

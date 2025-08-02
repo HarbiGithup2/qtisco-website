@@ -3,166 +3,184 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle } from "lucide-react"
 
 export function ServicesOverview() {
   const [hoveredService, setHoveredService] = useState<number | null>(null)
 
-  const services = [
-    {
-      title: "Metallurgical Testing",
-      description:
-        "Comprehensive testing of metallic materials with ISO certifications, fully equipped to assess compliance with applicable standards and specifications.",
-      image: "/images/qtisco-logo.png",
-      features: [
-        "Tension Testing of Metallic Materials",
-        "Tensile Testing of Welded Samples",
-        "Bend Testing of Welded Samples",
-        "Fillet Weld Breaking Test",
-        "Notched Bar Impact Testing",
-        "Vickers Hardness Testing",
-        "Macro Etching of Metals and Alloys",
-      ],
-      standards: ["ASTM", "BS", "ASME", "AWS", "ISO"],
-      color: "bg-red-500",
-      gradient: "from-red-500 to-red-600",
-    },
-    {
-      title: "Non-Destructive Testing",
-      description:
-        "Crucial method for examining objects or structures for potential faults without causing destruction or permanent deformation, particularly valuable for production and maintenance checks.",
-      image: "/images/qtisco_image_4_3.jpeg",
-      features: [
-        "Radiography (X-Ray & Gamma-Ray)",
-        "Magnetic Particle Testing",
-        "Liquid Penetrant Testing",
-        "Ultrasonic Testing",
-        "Post-Weld Heat Treatment (PWHT)",
-        "Automated Ultrasonic Testing (AUT)",
-        "Borescope Inspections",
-        "Eddy Current Testing",
-        "Thickness Measurement",
-      ],
-      standards: ["Oil & Gas", "Refineries", "Petrochemicals", "Military"],
-      color: "bg-blue-500",
-      gradient: "from-blue-500 to-blue-600",
-    },
-    {
-      title: "Civil Construction Material Testing",
-      description:
-        "Comprehensive services ensuring compliance and quality control for diverse construction materials, delivering excellence in every construction project.",
-      image: "/placeholder.svg?height=300&width=400&text=Construction+Materials+Testing",
-      features: [
-        "Concrete Testing",
-        "Grouts Analysis",
-        "Fine and Coarse Aggregates",
-        "Cement Testing",
-        "Asphalt Testing",
-        "Water Quality Testing",
-        "Admixtures Testing",
-        "Reinforcements Testing",
-        "Masonry Blocks",
-        "Paving Blocks",
-        "PVC Water Stops",
-        "Refractory Materials",
-      ],
-      standards: ["ASTM", "BS", "International Standards"],
-      color: "bg-green-500",
-      gradient: "from-green-500 to-green-600",
-    },
-    {
-      title: "Soil and Rock Testing",
-      description:
-        "Sub-soil investigations and various testing for soil and rocks, providing full support for ongoing civil construction projects and earthwork quality assurance.",
-      image: "/placeholder.svg?height=300&width=400&text=Soil+Testing+Laboratory",
-      features: [
-        "Particle Size Analysis",
-        "Maximum Dry Density and Optimum Moisture Content",
-        "Field Density Test",
-        "Plate Load Test",
-        "Standard Penetration Test",
-        "In-Situ Field CBR",
-        "Permeability Test",
-        "Unconfined Compression Strength",
-        "Dynamic Cone Penetration Test",
-        "Sulphate and Chloride Analysis",
-        "pH Testing",
-        "Swelling Index",
-        "Thermal Conductivity",
-      ],
-      standards: ["Geotechnical Standards", "ASTM", "BS"],
-      color: "bg-amber-600",
-      gradient: "from-amber-600 to-orange-600",
-    },
-    {
-      title: "Chemical Analysis",
-      description:
-        "Services for various chemical analysis of construction and environmental materials with highly qualified and experienced personnel.",
-      image: "/placeholder.svg?height=300&width=400&text=Chemical+Analysis+Lab",
-      features: [
-        "Coarse and Fine Aggregate Analysis",
-        "Soil Chemical Analysis",
-        "Water Testing",
-        "Admixtures Analysis",
-        "Cement Chemical Analysis",
-        "Concrete Analysis",
-        "Refractory Materials",
-        "Sand and Grit Blast Materials",
-        "Rock Analysis",
-        "Paint Materials",
-        "Bitumen Testing",
-        "Water Proofing Membrane",
-        "Gypsum Analysis",
-        "Granite and Marble Testing",
-      ],
-      standards: ["Environmental Standards", "Construction Standards"],
-      color: "bg-purple-500",
-      gradient: "from-purple-500 to-purple-600",
-    },
-    {
-      title: "Survey & Engineering Drafting",
-      description:
-        "Excellence in mapping and engineering survey, equipped to meet diverse requirements for ministries, municipalities, contractors, consultants, and oil sector companies.",
-      image: "/placeholder.svg?height=300&width=400&text=Survey+Equipment+GPS",
-      features: [
-        "Topographic Survey",
-        "Engineering Survey",
-        "Measured Building Survey",
-        "Stock Piles Volumetric and Quantity Survey",
-        "Utilities/Services Survey",
-        "GPS Satellite Positioning",
-        "Hydrographic and Bathymetric Survey",
-        "Aerial Surveying",
-        "Survey Training",
-        "Survey Project Management",
-      ],
-      standards: ["KOC", "KNPC", "Joint Operations"],
-      color: "bg-teal-500",
-      gradient: "from-teal-500 to-teal-600",
-    },
-    {
-      title: "Third Party Inspection Services",
-      description:
-        "Comprehensive inspection services ensuring quality and compliance during construction and operation phases with qualified engineers in diverse fields.",
-      image: "/placeholder.svg?height=300&width=400&text=Third+Party+Inspection",
-      features: [
-        "Civil Engineering Inspection",
-        "Mechanical Engineering Inspection",
-        "Health, Safety & Environmental",
-        "Electrical Engineering Inspection",
-        "Refineries Inspection",
-        "Petrochemical Plants",
-        "Pipelines Inspection",
-        "Residential Buildings",
-        "Heavy Industrial Works",
-        "Roads and Bridges",
-      ],
-      standards: ["International Standards", "Safety Compliance"],
-      color: "bg-indigo-500",
-      gradient: "from-indigo-500 to-indigo-600",
-    },
-  ]
+ const services = [
+  {
+    title: "Metallurgical Testing",
+    description:
+      "Fully equipped to assess the compliance of materials with applicable standards and specifications.",
+    image: "/images/qtisco_image_4_1.jpeg",
+    features: [
+      "Tension Testing of Metallic Materials",
+      "Tensile Testing of Welded Samples",
+      "Bend Testing of Welded Samples",
+      "Fillet Weld Breaking Test",
+      "Notched Bar Impact Testing",
+      "Impact Testing of Welded Samples",
+      "Vickers Hardness of Metallic Materials",
+      "Hardness Testing of Welded Samples",
+      "Nick Testing of Welded Samples",
+      "Macro Etching of Metals and Alloys",
+    ],
+    standards: ["ASTM", "BS", "ASME", "AWS", "ISO"],
+    color: "bg-red-500",
+    gradient: "from-red-500 to-red-600",
+  },
+  {
+    title: "Non-Destructive Testing",
+    description:
+      "Method for examining objects or structures for faults without causing destruction.",
+    image: "/images/qtisco_image_5_3.jpeg",
+    features: [
+      "Radiography (X-Ray & Gamma-Ray)",
+      "Magnetic Particle Testing",
+      "Liquid Penetrant Testing",
+      "Ultrasonic Testing",
+      "Post-Weld Heat Treatment (PWHT)",
+      "Preheat Treatment",
+      "Hardness Testing",
+      "Magnetic Flux Leakage (MFL)",
+      "Calibrations",
+      "Automated Ultrasonic Testing (AUT)",
+      "Borescope Inspections",
+      "Eddy Current Testing",
+      "Thickness Measurement",
+      "Risk-Based Inspections",
+    ],
+    standards: [],
+    color: "bg-blue-500",
+    gradient: "from-blue-500 to-blue-600",
+  },
+  {
+    title: "Civil Construction Material Testing",
+    description:
+      "Testing services for a range of construction materials.",
+    image: "/images/qtisco_image_6_4.jpeg",
+    features: [
+      "Concrete",
+      "Grouts",
+      "Fine and Coarse Aggregates",
+      "Cement",
+      "Asphalt",
+      "Water",
+      "Admixtures",
+      "Reinforcements",
+      "Masonry Blocks",
+      "Paving Blocks",
+      "PVC Water Stops",
+      "Refractory Materials",
+    ],
+    standards: [],
+    color: "bg-green-500",
+    gradient: "from-green-500 to-green-600",
+  },
+  {
+    title: "Soil and Rock Testing",
+    description:
+      "Testing for soil and rocks to support civil construction projects.",
+    image: "/images/qtisco_image_9_1.jpeg",
+    features: [
+      "Particle Size Analysis",
+      "Maximum Dry Density and Optimum Moisture Content",
+      "Field Density Test",
+      "Plate Load Test",
+      "Soil Resistivity",
+      "Point Load Index",
+      "Standard Penetration Test",
+      "In-Situ Field CBR",
+      "Permeability Test",
+      "Density & Water Absorption",
+      "Unconfined Compression Strength",
+      "Dynamic Cone Penetration Test",
+      "Sulphate and Chloride",
+      "Organic Content",
+      "Methylene Blue Absorption Test",
+      "Silica Content & Calcium Carbonate",
+      "Magnesium, Potassium & Sodium",
+      "pH",
+      "Swelling Index",
+      "Thermal Conductivity",
+      "Shear Test",
+    ],
+    standards: [],
+    color: "bg-amber-600",
+    gradient: "from-amber-600 to-orange-600",
+  },
+  {
+    title: "Chemical Analysis",
+    description:
+      "Chemical analysis for construction materials and environmental research.",
+    image: "/images/qtisco_image_10_2.jpeg",
+    features: [
+      "Coarse and Fine Aggregate",
+      "Soil",
+      "Water",
+      "Admixtures",
+      "Cement",
+      "Concrete",
+      "Refractory Materials",
+      "Sand and Grit Blast Materials Silica",
+      "Rock",
+      "Paint Materials",
+      "Bitumen",
+      "Water Proofing Membrane",
+      "Gypsum",
+      "Granite and Marble",
+    ],
+    standards: [],
+    color: "bg-purple-500",
+    gradient: "from-purple-500 to-purple-600",
+  },
+  {
+    title: "Survey & Engineering Drafting Services",
+    description:
+      "Survey services for ministries, municipalities, contractors, consultants, and oil sector clients.",
+    image: "/images/qtisco_image_7_4.jpeg",
+    features: [
+      "Topographic Survey",
+      "Engineering Survey",
+      "Measured Building Survey",
+      "Stock Piles Volumetric and Quantity Survey",
+      "Utilities/Services Survey",
+      "Survey Project Management",
+      "GPS Satellite Positioning",
+      "Hydrographic and Bathymetric Survey",
+      "Aerial Surveying",
+      "Survey Training",
+    ],
+    standards: [],
+    color: "bg-teal-500",
+    gradient: "from-teal-500 to-teal-600",
+  },
+  {
+    title: "Third Party Inspection Services",
+    description:
+      "Inspection services during construction and operation phases.",
+    image: "/images/qtisco_image_8_2.jpeg",
+    features: [
+      "Civil Engineering",
+      "Mechanical Engineering",
+      "Health, Safety, & Environmental",
+      "Electrical Engineering",
+      "Refineries",
+      "Petrochemical Plants",
+      "Pipelines",
+      "Civil Construction Projects",
+      "Residential Buildings",
+      "Offices",
+      "Heavy Industrial Works",
+      "Roads and Bridges",
+    ],
+    standards: [],
+    color: "bg-indigo-500",
+    gradient: "from-indigo-500 to-indigo-600",
+  },
+]
+
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
@@ -244,28 +262,18 @@ export function ServicesOverview() {
                   <div className="mb-6">
                     <h4 className="font-semibold text-slate-900 mb-3">Key Services Include:</h4>
                     <div className="grid grid-cols-1 gap-2 max-h-32 overflow-y-auto">
-                      {service.features.slice(0, 6).map((feature, featureIndex) => (
+                      {service.features.slice(0, service.features.length).map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-start space-x-2 text-sm text-slate-600">
                           <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${service.color}`}></div>
                           <span className="leading-relaxed">{feature}</span>
                         </div>
                       ))}
-                      {service.features.length > 6 && (
-                        <div className="text-sm text-slate-500 italic">
-                          +{service.features.length - 6} more services...
-                        </div>
-                      )}
+                    
                     </div>
                   </div>
 
                   {/* Learn More Button */}
-                  <Button
-                    variant="ghost"
-                    className="group-hover:bg-red-50 group-hover:text-red-600 transition-all duration-300 p-0 h-auto font-medium self-start"
-                  >
-                    Learn More
-                    <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
+            
                 </CardContent>
               </div>
             </Card>

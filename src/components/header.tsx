@@ -19,12 +19,12 @@ export function Header() {
   }, [])
 
   const navigationItems = [
-    { name: "Home", href: "/" },
+    { name: "Home", href: "/#hero-section" },
     { name: "Services", href: "/#services-overview" },
     { name: "About", href: "/#about-section" },
     { name: "Projects", href: "/#projects-section" },
+    { name: "Resources", href: "/#resources-section" },
     { name: "Accreditations", href: "/#accreditations-section" },
-    { name: "Testimonials", href: "/#testimonials-section" },
     { name: "Contact", href: "/#contact-section" },
   ]
 
@@ -39,7 +39,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-100 dark:bg-slate-900 dark:border-slate-800">
       {/* Top contact bar */}
-      <div className="bg-slate-800 text-white py-2">
+      <div className="bg-[#044484] text-white py-2">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-4 md:space-x-6">
@@ -70,12 +70,11 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center transform hover:scale-105 transition-transform duration-300">
             <Image
-              src="/images/qtisco-logo.png"
-              alt="QTISCO Laboratory Co. Logo"
-              width={160} // Adjusted for better mobile visibility
-              height={70} // Adjusted for better mobile visibility
-              className="h-10 w-auto sm:h-12 dark:brightness-0 dark:invert" // Responsive height, invert for dark mode
-              priority
+         src="/images/qtisco-logo.png"
+  alt="QTISCO Logo"
+  width={160}
+  height={70}
+  className="h-10 w-auto sm:h-12"
             />
           </Link>
 
@@ -151,12 +150,7 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Button
-                className="bg-red-600 hover:bg-red-700 text-white w-full max-w-xs mx-auto mt-8 py-3 text-lg"
-                onClick={() => scrollToSection("contact-section")}
-              >
-                Get Quote
-              </Button>
+          
               {mounted && ( // Only render theme toggle after component mounts
                 <Button
                   variant="outline"
