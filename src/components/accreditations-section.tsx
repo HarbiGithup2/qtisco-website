@@ -16,7 +16,7 @@ export function AccreditationsSection() {
       link: "/im",
     },
     {
-      name: "ISO 14001:2015 - Environmental Management",
+      name: "ISO 14001:2015 - Environmental Management Management",
       image: "/images/certificates/qtisco_image_11_2.jpeg",
       link: "/accreditations/iso-14001",
     },
@@ -26,7 +26,7 @@ export function AccreditationsSection() {
       link: "/accreditations/iso-45001",
     },
     {
-      name: "ASTM International Compliance",
+      name: "ISO 17025:2017	- Quality Management Certification for Laboratories Laboratories",
       image: "/images/certificates/qtisco_image_11_6.jpeg",
       link: "/accreditations/astm",
     },

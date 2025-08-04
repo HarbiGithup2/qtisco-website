@@ -84,7 +84,7 @@ export function Header() {
                 alt="QTISCO Logo"
                 width={160}
                 height={70}
-                className="h-10 w-auto sm:h-12"
+                className="h-11 w-auto sm:h-12"
                 priority
               />
             ) : (
@@ -162,7 +162,7 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-slate-800 text-1xl.5 font-bold hover:text-red-600 transition-colors duration-300 dark:text-slate-200 dark:hover:text-red-400"
+                  className="text-slate-800 text-1x2 font-bold hover:text-red-600 transition-colors duration-300 dark:text-slate-200 dark:hover:text-red-400"
                   onClick={(e) => {
                     e.preventDefault()
                     scrollToSection(item.href.split("#")[1])
