@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, ExternalLink } from "lucide-react"
+import { MapPin, Phone, Mail, ExternalLink } from "lucide-react"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -38,7 +38,6 @@ export function ContactSection() {
       details: ["services@qtisco.com", "Quick Response Guaranteed"],
       color: "bg-green-500",
     },
-    
   ]
 
   const services = [
@@ -83,18 +82,24 @@ export function ContactSection() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative" id="contact-section">
+    <section
+      className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative dark:from-slate-900 dark:via-slate-800 dark:to-blue-950"
+      id="contact-section"
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-medium mb-4 animate-fadeInUp">
+          <div className="inline-flex items-center space-x-2 bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-medium mb-4 animate-fadeInUp dark:bg-red-900/20 dark:text-red-400">
             <Mail className="h-4 w-4" />
             <span>Get In Touch</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 animate-slideInUp">
-            Ready to Start Your <span className="text-red-600">Testing Project?</span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 animate-slideInUp dark:text-white">
+            Ready to Start Your <span className="text-red-600 dark:text-red-400">Testing Project?</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto animate-fadeInUp" style={{ animationDelay: "0.2s" }}>
+          <p
+            className="text-xl text-slate-600 max-w-3xl mx-auto animate-fadeInUp dark:text-slate-300"
+            style={{ animationDelay: "0.2s" }}
+          >
             Contact our expert team for comprehensive testing solutions tailored to your specific requirements.
           </p>
         </div>
@@ -107,18 +112,18 @@ export function ContactSection() {
               {contactInfo.map((info, index) => (
                 <Card
                   key={index}
-                  className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-floatUp"
+                  className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-floatUp bg-white dark:bg-slate-900 dark:border dark:border-slate-700"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardContent className="p-3">
                     <div className="flex items-start space-x-4">
-                      <div className={`${info.color} p-3 rounded-lg flex-shrink-0`}>
+                      <div className={`${info.color} p-3 rounded-lg flex-shrink-0 dark:bg-opacity-80`}>
                         <info.icon className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-slate-900 mb-2">{info.title}</h3>
+                        <h3 className="font-bold text-slate-900 mb-2 dark:text-white">{info.title}</h3>
                         {info.details.map((detail, detailIndex) => (
-                          <p key={detailIndex} className="text-slate-600 text-sm mb-1">
+                          <p key={detailIndex} className="text-slate-600 text-sm mb-1 dark:text-slate-300">
                             {detail}
                           </p>
                         ))}
@@ -130,14 +135,16 @@ export function ContactSection() {
             </div>
 
             {/* Google Maps */}
-     
 
             {/* Quick Stats (Removed from here as it's in Hero and Stats sections) */}
           </div>
 
           {/* Contact Form */}
           <div>
-            <Card className="border-0 shadow-2xl animate-slideInUp" style={{ animationDelay: "0.3s" }}>
+            <Card
+              className="border-0 shadow-2xl animate-slideInUp bg-white dark:bg-slate-900 dark:border dark:border-slate-700"
+              style={{ animationDelay: "0.3s" }}
+            >
               <CardContent className="p-0">
                 <div className="relative">
                   <div className="bg-gradient-to-r from-red-600 to-blue-600 p-4 text-white">

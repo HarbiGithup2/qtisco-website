@@ -13,22 +13,19 @@ export function HeroSection() {
       image: "/images/home.PNG",
       title: "Quality Embedded",
       subtitle: "Setting Testing Standards in Kuwait",
-      description:
-        "ISO certified lab delivering reliable solutions in construction, metallurgy, and soil testing.",
+      description: "ISO certified lab delivering reliable solutions in construction, metallurgy, and soil testing.",
     },
     {
       image: "/images/qtisco_image_8_1.jpeg",
       title: "Trusted Testing",
       subtitle: "Your Partner in Excellence",
-      description:
-        "Expert inspections for oil & gas, petrochemicals, and civil projects—24/7 availability.",
+      description: "Expert inspections for oil & gas, petrochemicals, and civil projects—24/7 availability.",
     },
     {
       image: "/images/qtisco_image_5_2.jpeg",
       title: "Advanced Technology",
       subtitle: "Modern Facilities & Tools",
-      description:
-        "Accurate testing using global standards and calibrated equipment.",
+      description: "Accurate testing using global standards and calibrated equipment.",
     },
   ]
 
@@ -65,7 +62,7 @@ export function HeroSection() {
             }`}
           >
             <Image
-              src={slide.image}
+              src={slide.image || "/placeholder.svg"}
               alt={slide.title}
               fill
               className="object-cover fill-current object-center"
@@ -145,18 +142,18 @@ export function HeroSection() {
 
       {/* Highlights */}
       <div className="absolute top-8 right-8 z-20 hidden lg:block">
-        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 space-y-4 animate-slideInRight">
-          <h3 className="font-bold text-slate-900 text-center">Why QTISCO?</h3>
+        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 space-y-4 animate-slideInRight dark:bg-slate-900/90 dark:border dark:border-slate-700">
+          <h3 className="font-bold text-slate-900 text-center dark:text-white">Why QTISCO?</h3>
           {highlights.map((item, index) => (
             <div
               key={index}
               className="flex items-center space-x-3 animate-fadeInUp hover:scale-105 transition-transform duration-300"
               style={{ animationDelay: item.delay }}
             >
-              <div className="bg-blue-100 p-2 rounded-full">
-                <item.icon className="h-5 w-5 text-blue-600" />
+              <div className="bg-blue-100 p-2 rounded-full dark:bg-blue-900/20">
+                <item.icon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
               </div>
-              <span className="text-sm text-slate-700 font-medium">{item.text}</span>
+              <span className="text-sm text-slate-700 font-medium dark:text-slate-300">{item.text}</span>
             </div>
           ))}
         </div>

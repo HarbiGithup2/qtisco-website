@@ -20,8 +20,11 @@ export function Header() {
 
   const navigationItems = [
     { name: "Home", href: "/#hero-section" },
-    { name: "Services", href: "/#services-overview" },
     { name: "About", href: "/#about-section" },
+    { name: "Vision", href: "/#vision-section" },
+    { name: "Values", href: "/#values-mission-section" },
+    { name: "Business Activities", href: "/#business-activities-section" },
+    { name: "Services", href: "/#services-overview" },
     { name: "Projects", href: "/#projects-section" },
     { name: "Resources", href: "/#resources-section" },
     { name: "Accreditations", href: "/#accreditations-section" },
@@ -35,6 +38,12 @@ export function Header() {
       setIsMenuOpen(false) // Close menu after clicking a link
     }
   }
+
+  // Determine which logo to show based on theme
+  const currentLogoSrc =
+    mounted && theme === "dark"
+        ? "/images/qtisco_image_1_4.jpeg" // Dark mode logo
+      : "/images/qtisco-logo.png" // Light mode logo
 
   return (
     <header className="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-100 dark:bg-slate-900 dark:border-slate-800">
@@ -69,17 +78,23 @@ export function Header() {
         <div className="flex justify-between items-center py-3 lg:py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center transform hover:scale-105 transition-transform duration-300">
-            <Image
-         src="/images/qtisco-logo.png"
-  alt="QTISCO Logo"
-  width={160}
-  height={70}
-  className="h-10 w-auto sm:h-12"
-            />
+            {mounted ? ( // Only render the Image component after mounted to prevent hydration errors
+              <Image
+                src={currentLogoSrc || "/placeholder.svg"}
+                alt="QTISCO Logo"
+                width={160}
+                height={70}
+                className="h-10 w-auto sm:h-12"
+                priority
+              />
+            ) : (
+              // Render a placeholder or nothing on the server
+              <div className="h-10 w-[160px] sm:h-12 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+            )}
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8" aria-label="Main navigation">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
@@ -98,7 +113,6 @@ export function Header() {
 
           {/* CTA Button and Theme Toggle */}
           <div className="hidden lg:flex items-center space-x-4">
-          
             {mounted && ( // Only render theme toggle after component mounts
               <Button
                 variant="ghost"
@@ -117,6 +131,8 @@ export function Header() {
             className="lg:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 dark:text-slate-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isMenuOpen} // Added aria-expanded
+            aria-controls="mobile-menu-overlay" // Added aria-controls
           >
             {isMenuOpen ? (
               <X className="h-6 w-6 text-slate-700 dark:text-slate-300" />
@@ -128,7 +144,12 @@ export function Header() {
 
         {/* Mobile Navigation Overlay */}
         {isMenuOpen && (
-          <div className="lg:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-50 flex flex-col items-center justify-center py-8 animate-fadeIn dark:bg-slate-900/95">
+          <div
+            id="mobile-menu-overlay" // Added id
+            className="lg:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-50 flex flex-col items-center justify-center py-8 animate-fadeIn dark:bg-slate-900/95"
+            role="dialog" // Added role for accessibility
+            aria-modal="true" // Added aria-modal
+          >
             <button
               className="absolute top-4 right-4 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 dark:text-slate-300"
               onClick={() => setIsMenuOpen(false)}
@@ -136,28 +157,29 @@ export function Header() {
             >
               <X className="h-8 w-8 text-slate-700 dark:text-slate-300" />
             </button>
-            <nav className="flex flex-col space-y-6 text-center">
+            <nav className="flex flex-col space-y-6 text-center" role="menu" aria-orientation="vertical">
               {navigationItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-slate-800 text-2xl font-bold hover:text-red-600 transition-colors duration-300 dark:text-slate-200 dark:hover:text-red-400"
+                  className="text-slate-800 text-1xl.5 font-bold hover:text-red-600 transition-colors duration-300 dark:text-slate-200 dark:hover:text-red-400"
                   onClick={(e) => {
                     e.preventDefault()
                     scrollToSection(item.href.split("#")[1])
                   }}
+                  role="menuitem" // Added role="menuitem"
                 >
                   {item.name}
                 </Link>
               ))}
-          
-              {mounted && ( // Only render theme toggle after component mounts
+              {mounted && (
                 <Button
                   variant="outline"
                   size="lg"
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                   className="w-full max-w-xs mx-auto mt-4 py-3 text-lg border-slate-300 text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
                   aria-label="Toggle theme"
+                  role="menuitem" // Added role="menuitem" for theme toggle button
                 >
                   {theme === "dark" ? (
                     <>

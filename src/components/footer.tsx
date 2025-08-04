@@ -20,12 +20,14 @@ import {
 
 export function Footer() {
   const quickLinks = [
-    { name: "Home", href: "/" },
-    { name: "About Us", href: "/#about-section" },
+      { name: "Home", href: "/#hero-section" },
+    { name: "About", href: "/#about-section" },
+    { name: "Vision", href: "/#vision-section" },
+    { name: "Values", href: "/#values-mission-section" },
     { name: "Services", href: "/#services-overview" },
     { name: "Projects", href: "/#projects-section" },
+    { name: "Resources", href: "/#resources-section" },
     { name: "Accreditations", href: "/#accreditations-section" },
-    { name: "Contact", href: "/#contact-section" },
   ]
 
   const services = [

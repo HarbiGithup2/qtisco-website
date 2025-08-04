@@ -1,64 +1,35 @@
 "use client"
 
-import { FileText, DownloadCloud, ShieldCheck } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { HardHat } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
 
 export function ResourcesSection() {
-  const resources = [
-    {
-      title: "Company Brochure",
-      description: "Download our official company profile including all testing services and capabilities.",
-      icon: FileText,
-      link: "/resources/QTISCO_Brochure.pdf",
-      fileName: "QTISCO_Brochure.pdf",
-    },
-    {
-      title: "Accreditations & Certifications",
-      description: "View quality certifications and accreditations held by QTISCO Laboratory Co.",
-      icon: ShieldCheck,
-       link: "/resources/QTISCO_Brochure.pdf",
-      fileName: "QTISCO_Brochure.pdf",
-    },
-    {
-      title: "Service Request Form",
-      description: "Use this form to request lab testing or inspection services officially.",
-      icon: DownloadCloud,
-       link: "/resources/QTISCO_Brochure.pdf",
-      fileName: "QTISCO_Brochure.pdf",
-    },
-  ]
-
   return (
-    <section id="resources-section" className="py-10 bg-slate-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">Resources & Downloads</h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            Access key documents and certifications related to QTISCO's operations and quality standards.
-          </p>
+    <section className="py-20 bg-white dark:bg-slate-800 relative overflow-hidden" id="resources-section">
+      <div className="container mx-auto px-4 relative">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-amber-100 text-amber-600 px-4 py-2 rounded-full text-sm font-medium mb-4 animate-fadeInUp dark:bg-amber-900/20 dark:text-amber-400">
+            <HardHat className="h-4 w-4" />
+            <span>Our Capabilities</span>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 animate-slideInUp dark:text-white">
+            Unmatched <span className="text-amber-600 dark:text-amber-400">Resources & Expertise</span>
+          </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {resources.map((resource, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl p-6 shadow-sm border hover:shadow-lg transition duration-300"
-            >
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="bg-blue-100 p-3 rounded-full">
-                  <resource.icon className="h-6 w-6 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-slate-800">{resource.title}</h3>
-              </div>
-              <p className="text-slate- text-sm mb-4">{resource.description}</p>
-              <a href={resource.link} download={resource.fileName}>
-                <Button variant="outline" className="w-full bg-[#044484] text-white ">
-                  Download PDF
-                </Button>
-              </a>
-            </div>
-          ))}
-        </div>
+        <Card className="max-w-4xl mx-auto border-0 shadow-lg p-8 animate-fadeInUp bg-white dark:bg-slate-900 dark:border dark:border-slate-700">
+          <CardContent className="p-0 space-y-6 text-lg text-slate-600 leading-relaxed dark:text-slate-300">
+            <p>QTISCO has all the resources and expertise in the field of testing and inspection services.</p>
+            <p>
+              Each department is headed by personnel having decades of proven capability in the specific field and very
+              well supported by expert technical crews.
+            </p>
+            <p>
+              The facility is equipped with state-of-the-art equipment and are maintained in compliance with the laws of
+              the land.
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </section>
   )
